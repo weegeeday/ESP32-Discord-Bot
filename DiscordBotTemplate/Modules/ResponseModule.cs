@@ -13,6 +13,8 @@ namespace DiscordBotTemplate.Modules
     public class Module1 : ModuleBase<SocketCommandContext>
     {
 SerialPort port = new SerialPort();
+
+
         [Command("Connect")]
         
          public async Task Connect(string[] args)
@@ -46,7 +48,7 @@ SerialPort port = new SerialPort();
             
             await ReplyAsync($"Sending request to device..");
             port.Write("short");
-            port.ReadLine() = ReadShort;
+            ReadShort = int.Parse(port.ReadLine());
             if (ReadShort is 1)
             {
                 await ReplyAsync($"Request Sent!");
@@ -57,7 +59,7 @@ SerialPort port = new SerialPort();
                 await ReplyAsync($"Request failed.");
             }
             System.Threading.Thread.Sleep(1500);
-            port.ReadLine() = ReadShort;
+            ReadShort = int.Parse(port.ReadLine());
              if (ReadShort is 2)
             {
                 await ReplyAsync($"Request Done!");
@@ -68,7 +70,7 @@ SerialPort port = new SerialPort();
             }
         }
 
-int ReadLong = 0;
+    int ReadLong = 0;
         /// <summary>
         /// Gives a cookie to the tagged user.
         /// </summary>
@@ -80,7 +82,7 @@ int ReadLong = 0;
         {
             await ReplyAsync($"Sending request to device...");
             port.Write("long");
-            port.ReadLine() = ReadLong;
+            ReadLong = int.Parse(port.ReadLine()); 
           if (ReadLong is 3)
             {
                 await ReplyAsync($"Request Sent!");
@@ -90,7 +92,7 @@ int ReadLong = 0;
                 await ReplyAsync($"Request failed.");
             }
             System.Threading.Thread.Sleep(2500);
-            port.ReadLine() = ReadLong;
+            ReadLong = int.Parse(port.ReadLine());
              if (ReadLong is 4)
             {
                 await ReplyAsync($"Request Done!");

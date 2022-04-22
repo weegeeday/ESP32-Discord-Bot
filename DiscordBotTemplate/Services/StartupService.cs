@@ -5,7 +5,9 @@ using System;
 using System.Diagnostics;
 using System.Reflection;
 using System.Threading.Tasks;
-
+using Discord.Net;
+using Discord.Net.Rest;
+using Discord.Net.WebSockets;
 
 namespace DiscordBotTemplate.Services
 {
@@ -40,10 +42,11 @@ namespace DiscordBotTemplate.Services
         /// <returns>An awaitable task.</returns>
         public async Task StartAsync()
         {
-            string discordToken;
+            string discordToken; 
             Func<Task> connected;
             Func<Task> loggedIn;
             Func<Task> clientReady;
+            discordToken = PUT YOUR TOKEN HERE
 
 
             discordToken = _config.DiscordToken;
@@ -99,7 +102,8 @@ namespace DiscordBotTemplate.Services
             await _discord.StartAsync();
 
             // Load commands and modules into the command service.
-            await _commands.AddModulesAsync(Assembly.GetEntryAssembly());
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), services: null);
+            //await _commands.AddModulesAsync(Assembly.GetEntryAssembly(Modules.Module1));
         }
     }
 }

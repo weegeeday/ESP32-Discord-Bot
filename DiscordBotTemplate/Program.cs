@@ -6,7 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Discord.Net;
+using Discord.Net.Rest;
+using Discord.Net.WebSockets;
 namespace DiscordBotTemplate
 {
     class Program
