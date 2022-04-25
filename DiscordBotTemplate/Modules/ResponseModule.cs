@@ -107,5 +107,4 @@ SerialPort port = new SerialPort();
 
     }
 }
-//haha funny programmer comment amogus sex hahah
 

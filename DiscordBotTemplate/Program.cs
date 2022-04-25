@@ -15,7 +15,7 @@ namespace DiscordBotTemplate
     {
         public void task()
         {
-            Console.WriteLine("sex");
+            Console.WriteLine("hi");
             System.Threading.Thread.Sleep(3500);
         }
         
