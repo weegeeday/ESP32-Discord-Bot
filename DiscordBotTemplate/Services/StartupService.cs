@@ -47,7 +47,6 @@ namespace DiscordBotTemplate.Services
             Func<Task> connected;
             Func<Task> loggedIn;
             Func<Task> clientReady;
-            discordToken = "OTY3MTc5NzE2NjkzOTgzMjcy.YmMiTQ.T9PL8bgMzORBm-ZhyMLMy90TOvo";
 
 
             discordToken = _config.DiscordToken;
