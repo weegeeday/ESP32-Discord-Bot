@@ -67,9 +67,19 @@ namespace DiscordBotTemplate
                 }
             );
 
-            // Add singletons of all the services we will need.
+            // Add singletons of all the services we will need.     //Error is here. error log is in error.md
             services = new ServiceCollection()
-                 .AddSingleton(_client).AddSingleton(_commands).AddSingleton<CommandHandler>().AddSingleton<LoggingService>().AddSingleton<StartupService>().AddSingleton(_config);
+                 //.ConfigureServices((_, services) =>
+                      //services.AddTransient<ITransientOperation, DefaultOperation>()
+                        .AddSingleton(_client)
+                        .AddSingleton(_commands)
+                        .AddSingleton<CommandHandler>()
+                        .AddSingleton<LoggingService>()
+                        .AddSingleton<StartupService>()
+                        .AddSingleton(_config);
+                        //.Build();
+            
+            
 
             // Create the service provider.
             provider = new DefaultServiceProviderFactory().CreateServiceProvider(services);
