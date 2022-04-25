@@ -5,6 +5,9 @@ BluetoothSerial SerialBT;
      
 void setup()
 {
+  Serial.begin(9600);
+  delay(500);
+  Serial.print("sus");
   pinMode(5,OUTPUT);
   SerialBT.begin("ESP32");
   delay(1000);

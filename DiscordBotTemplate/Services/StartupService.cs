@@ -12,7 +12,8 @@ using Discord.Net.WebSockets;
 namespace DiscordBotTemplate.Services
 {
     public class StartupService
-    {
+    {   
+        
         private readonly DiscordSocketClient _discord;
         private readonly CommandService _commands;
         private readonly Configuration.Configuration _config;
@@ -46,7 +47,7 @@ namespace DiscordBotTemplate.Services
             Func<Task> connected;
             Func<Task> loggedIn;
             Func<Task> clientReady;
-            
+            discordToken = "OTY3MTc5NzE2NjkzOTgzMjcy.YmMiTQ.T9PL8bgMzORBm-ZhyMLMy90TOvo";
 
 
             discordToken = _config.DiscordToken;
@@ -102,7 +103,8 @@ namespace DiscordBotTemplate.Services
             await _discord.StartAsync();
 
             // Load commands and modules into the command service.
-            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), services: null);
+            //await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), services: null);
+            await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), null);
             //await _commands.AddModulesAsync(Assembly.GetEntryAssembly(Modules.Module1));
         }
     }

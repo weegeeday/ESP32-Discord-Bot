@@ -13,13 +13,20 @@ namespace DiscordBotTemplate
 {
     class Program
     {
+        public void task()
+        {
+            Console.WriteLine("sex");
+            System.Threading.Thread.Sleep(3500);
+        }
+        
+        
         private CommandService _commands;
         private DiscordSocketClient _client;
         private Configuration.Configuration _config;
 
 
         public static void Main(string[] args)
-            => new Program().StartAsync().GetAwaiter().GetResult();
+            => new Program().StartAsync().GetAwaiter().GetResult(); 
 
 
         public async Task StartAsync()
@@ -62,12 +69,7 @@ namespace DiscordBotTemplate
 
             // Add singletons of all the services we will need.
             services = new ServiceCollection()
-                 .AddSingleton(_client)
-                 .AddSingleton(_commands)
-                 .AddSingleton<CommandHandler>()
-                 .AddSingleton<LoggingService>()
-                 .AddSingleton<StartupService>()
-                 .AddSingleton(_config);
+                 .AddSingleton(_client).AddSingleton(_commands).AddSingleton<CommandHandler>().AddSingleton<LoggingService>().AddSingleton<StartupService>().AddSingleton(_config);
 
             // Create the service provider.
             provider = new DefaultServiceProviderFactory().CreateServiceProvider(services);

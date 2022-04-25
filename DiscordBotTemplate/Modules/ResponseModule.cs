@@ -24,10 +24,12 @@ SerialPort port = new SerialPort();
             try
             {
                 //connect to device
+                Console.WriteLine("connecting to device");
                 port = new SerialPort();
                 port.BaudRate = 9600;
                 port.PortName = "COM4";
                 port.Open();
+                Console.WriteLine("com port open");
  
             }
             catch (Exception ex)
@@ -105,4 +107,5 @@ SerialPort port = new SerialPort();
 
     }
 }
+//haha funny programmer comment amogus sex hahah
 

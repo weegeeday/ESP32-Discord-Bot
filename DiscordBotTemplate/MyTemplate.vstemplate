@@ -1,0 +1,38 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>DiscordBotTemplate</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DiscordBotTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="DiscordBotTemplate.csproj" File="DiscordBotTemplate.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="app.config">app.config</ProjectItem>
+      <Folder Name="Configuration" TargetFolderName="Configuration">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Configuration.cs">Configuration.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ConfigurationReader.cs">ConfigurationReader.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Modules" TargetFolderName="Modules">
+        <ProjectItem ReplaceParameters="true" TargetFileName="ResponseModule.cs">ResponseModule.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="packages.config">packages.config</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name="Services" TargetFolderName="Services">
+        <ProjectItem ReplaceParameters="true" TargetFileName="CommandHandler.cs">CommandHandler.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="LoggingService.cs">LoggingService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="StartupService.cs">StartupService.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
