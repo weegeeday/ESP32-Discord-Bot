@@ -34,7 +34,6 @@ namespace DiscordBotTemplate
             IServiceCollection services;
             IServiceProvider provider;
 
-
             try
             {
                 _config = Configuration.ConfigurationReader.Load();
@@ -68,8 +67,8 @@ namespace DiscordBotTemplate
             );
 
             // Add singletons of all the services we will need.     //Error is here. error log is in error.md
-            services = new ServiceCollection()
-                 //.ConfigureServices((_, services) =>
+            services = new ServiceCollection();
+                 ServiceCollection().ConfigureServices((_, services) => 
                       //services.AddTransient<ITransientOperation, DefaultOperation>()
                         .AddSingleton(_client)
                         .AddSingleton(_commands)
