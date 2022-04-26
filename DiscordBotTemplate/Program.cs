@@ -75,7 +75,7 @@ namespace DiscordBotTemplate
                         .AddSingleton<CommandHandler>()
                         .AddSingleton<LoggingService>()
                         .AddSingleton<StartupService>()
-                        .AddSingleton(_config);
+                        .AddSingleton(_config));
                         //.Build();
             
             
