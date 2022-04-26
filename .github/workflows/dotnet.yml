@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-    name: win,mac builds. not sure if all of them work.
-    runs-on: [windows-latest, macOS-latest]
+    name: win build. if you want mac or linux builds, youil have to build them yourself.
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
