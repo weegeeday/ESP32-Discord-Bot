@@ -70,14 +70,14 @@ namespace DiscordBotTemplate
             services = new ServiceCollection();
                  ServiceCollection().ConfigureServices((_, services) => 
                       //services.AddTransient<ITransientOperation, DefaultOperation>()
-                        .AddSingleton(_client)
-                        .AddSingleton(_commands)
-                        .AddSingleton<CommandHandler>()
-                        .AddSingleton<LoggingService>()
-                        .AddSingleton<StartupService>()
-                        .AddSingleton(_config));
+                        services.AddSingleton(_client)
+                        services.AddSingleton(_commands)
+                        services.AddSingleton<CommandHandler>()
+                        services.AddSingleton<LoggingService>()
+                        services.AddSingleton<StartupService>()
+                        services.AddSingleton(_config));
                         //.Build();
-            
+                 
             
 
             // Create the service provider.
