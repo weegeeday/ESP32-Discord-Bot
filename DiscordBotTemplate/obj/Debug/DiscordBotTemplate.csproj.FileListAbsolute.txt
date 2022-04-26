@@ -1,0 +1,2 @@
+C:\Users\simon\Downloads\Discord-Bot-Template-master\Discord-Bot-Template-master\Discord-Bot-Template-master\DiscordBotTemplate\obj\Debug\DiscordBotTemplate.csprojAssemblyReference.cache
+C:\Users\simon\Downloads\Discord-Bot-Template-master\Discord-Bot-Template-master\Discord-Bot-Template-master\DiscordBotTemplate\obj\Debug\DiscordBotTemplate.csproj.CoreCompileInputs.cache
