@@ -70,12 +70,12 @@ namespace DiscordBotTemplate
             services = new ServiceCollection();
                     //ServiceCollection.ConfigureServices((_, services) => //doesnt work. from: https://docs.microsoft.com/en-us/dotnet/core/extensions/dependency-injection-usage
                       //services.AddTransient<ITransientOperation, DefaultOperation>()
-                        services.AddSingleton(_client),
-                        services.AddSingleton(_commands),
-                        services.AddSingleton<CommandHandler>(),
-                        services.AddSingleton<LoggingService>(),
-                        services.AddSingleton<StartupService>(),
-                        services.AddSingleton(_config));
+                    services.AddSingleton(_client);
+                    services.AddSingleton(_commands);
+                    services.AddSingleton<CommandHandler>();
+                    services.AddSingleton<LoggingService>();
+                    services.AddSingleton<StartupService>();
+                    services.AddSingleton(_config);
                         //.Build();
                  
             
