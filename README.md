@@ -1,5 +1,5 @@
 used: https://github.com/jpdunn/Discord-Bot-Template
-# Discord-Bot-Template
-A Visual Studio template for a Discord.NET bot written in C#
+# ESP32 Discord Bot
+Discord.NET bot written in C#, to communicate with an esp32.
 very broken
 
