@@ -1,3 +1,9 @@
+Python branch of ESP32-Discord-Bot
+this is the readme of the template
+what do you want
+im lazy and barely know how to code
+
+
 # Python Discord Bot Template
 
 <p align="center">
