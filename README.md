@@ -1,10 +1,3 @@
-USED: https://github.com/kkrypt0nn/Python-Discord-Bot-Template/
-Python Branch
-# ESP32-Discord-Bot
-A discord bot to interact with an ESP32 over serial bluetooth. 
-
-BRGIN README OF TEMPLATE
-
 # Python Discord Bot Template
 
 <p align="center">
