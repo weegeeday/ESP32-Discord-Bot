@@ -8,7 +8,7 @@ void setup()
   Serial.begin(9600);
   delay(500);
   Serial.print("sus");
-  pinMode(5,OUTPUT);
+  pinMode(5,OUTPUT); //SET THIS TO ANALOG SOON! aloso might need to switch digitialWrite to analogWrite
   SerialBT.begin("ESP32");
   delay(1000);
 }
@@ -16,23 +16,89 @@ void setup()
 void loop()
 {
   String inputFromOtherSide;
-  String inputFromOtherSide2;
   if (SerialBT.available()) {
     inputFromOtherSide = SerialBT.readString(); //read data being sent to us and save it to variable
-    if (inputFromOtherSide = "short"){
+    if (inputFromOtherSide = "lshort"){
     SerialBT.println("1");
-    digitalWrite(5,HIGH);
+    digitalWrite(5,70);
     delay(1500);
-    digitalWrite(5,LOW);
+    digitalWrite(5,0);
     SerialBT.println("2");
+    inputFromOtherSide = 0;
     }
-    inputFromOtherSide2 = SerialBT.readString();
-    if (inputFromOtherSide2 = "long"){
-    SerialBT.println("3");
-    digitalWrite(5,HIGH);
+    if (SerialBT.available()) {
+    inputFromOtherSide = SerialBT.readString(); //read data being sent to us and save it to variable
+    if (inputFromOtherSide = "mshort"){
+    SerialBT.println("1");
+    digitalWrite(5,160);
+    delay(1500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    if (SerialBT.available()) {
+    inputFromOtherSide = SerialBT.readString(); //read data being sent to us and save it to variable
+    if (inputFromOtherSide = "hshort"){
+    SerialBT.println("1");
+    digitalWrite(5,230);
+    delay(1500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    inputFromOtherSide = SerialBT.readString();
+    if (inputFromOtherSide = "llong"){
+    SerialBT.println("1");
+    digitalWrite(5,70);
     delay(2500);
-    digitalWrite(5,LOW);
-    SerialBT.println("4");
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    inputFromOtherSide = SerialBT.readString();
+    if (inputFromOtherSide = "mlong"){
+    SerialBT.println("1");
+    digitalWrite(5,160);
+    delay(2500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    inputFromOtherSide = SerialBT.readString();
+    if (inputFromOtherSide = "hlong"){
+    SerialBT.println("1");
+    digitalWrite(5,230);
+    delay(2500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    inputFromOtherSide = SerialBT.readString();
+    if (inputFromOtherSide = "lmed"){
+    SerialBT.println("1");
+    digitalWrite(5,70);
+    delay(2500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    inputFromOtherSide = SerialBT.readString();
+    if (inputFromOtherSide = "mmed"){
+    SerialBT.println("1");
+    digitalWrite(5,160);
+    delay(2500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
+    }
+    inputFromOtherSide = SerialBT.readString();
+    if (inputFromOtherSide = "hmed"){
+    SerialBT.println("1");
+    digitalWrite(5,230);
+    delay(2500);
+    digitalWrite(5,0);
+    SerialBT.println("2");
+    inputFromOtherSide = 0;
     }
   }
 }
