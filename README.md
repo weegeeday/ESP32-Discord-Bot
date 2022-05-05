@@ -1,3 +1,7 @@
+this is the default readme. <br />
+not all of this is correct. <br />
+
+
 # Discord Py Bot Template
 Discord.py is a library that allows you to make discord bots with python. This repo is a template for the bot.
 
