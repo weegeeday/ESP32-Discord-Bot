@@ -1,9 +1,12 @@
 from discord.ext import commands
-import serial
-ser = serial.Serial()
-ser.baudrate = 9600
-ser.port = 'COM4'
-print(ser.name) 
+from http.server import BaseHTTPRequestHandler, HTTPServer
+import time
+import logging
+import settings
+import web
+hostName = settings.hostname
+serverPort = settings.port
+ser = web.MyServer(hostName, serverPort, BaseHTTPRequestHandler)
 lshortread = 0
 mshortread = 0
 hshortread = 0
@@ -24,120 +27,110 @@ class misc(commands.Cog):
 
     @commands.command()
     async def Lshort(self, ctx, msg):
-        ser.open()
         ser.write(b'lshort')
-        ser.read() == lshortread
+        ser.do_POST() == lshortread
         if lshortread == 1:
             await ctx.send(f"Sent!")
         while lshortread == 1:
-            ser.read() == lshortread
+            ser.do_POST() == lshortread
         await ctx.send(f"Done!")
         
     @commands.command()
     async def Mshort(self, ctx, msg):
-        ser.open()
         ser.write(b'mshort')
-        ser.read() == mshortread
+        ser.do_POST() == mshortread
         if mshortread == 1:
             await ctx.send(f"Sent!")
         while mshortread == 1:
-            ser.read() == mshortread
+            ser.do_POST() == mshortread
         await ctx.send(f"Done!")
         
     @commands.command()
     async def Hshort(self, ctx, msg):
-        ser.open()
         ser.write(b'hshort')
-        ser.read() == hshortread
+        ser.do_POST() == hshortread
         if hshortread == 1:
             await ctx.send(f"Sent!")
         while hshortread == 1:
-            ser.read() == hshortread
+            ser.do_POST() == hshortread
         await ctx.send(f"Done!")
 
     @commands.command()
     async def llong(self, ctx, msg):
-        ser.open()
         ser.write(b'llong')
-        ser.read() == llongread
+        ser.do_POST() == llongread
         if llongread == 1:
             await ctx.send(f"Sent!")
         while llongread == 1:
-            ser.read() == llongread
+            ser.do_POST() == llongread
         await ctx.send(f"Done!")
         
     @commands.command()
     async def mlong(self, ctx, msg):
-        ser.open()
         ser.write(b'mlong')
-        ser.read() == mlongread
+        ser.do_POST() == mlongread
         if mlongread == 1:
             await ctx.send(f"Sent!")
         while mlongread == 1:
-            ser.read() == mlongread
+            ser.do_POST() == mlongread
         await ctx.send(f"Done!")
         
     @commands.command()
     async def hlong(self, ctx, msg):
-        ser.open()
         ser.write(b'hlong')
-        ser.read() == hlongread
+        ser.do_POST() == hlongread
         if hlongread == 1:
             await ctx.send(f"Sent!")
         while hlongread == 1:
-            ser.read() == hlongread
+            ser.do_POST() == hlongread
         await ctx.send(f"Done!")   
      
     @commands.command()
     async def SETVAL(self, ctx, arg1, arg2):
-        ser.open()
         ser.write(b"SV")
-        ser.read() == S1
+        ser.do_POST() == S1
         while S1 == 0:
-            ser.read() == S1 
+            ser.do_POST() == S1 
         ser.write(arg1)
         while S1 == 1:
-            ser.read() == S1
+            ser.do_POST() == S1
         ser.write(arg2)
         while S1 == 2:
-            ser.read() == S1
-        ser.read() == S2
+            ser.do_POST() == S1
+        ser.do_POST() == S2
         await ctx.send(f"Sent!")
         while S2 == 4:
-            ser.read() == S2
+            ser.do_POST() == S2
         await ctx.send(f"Done!")  
     
     @commands.command()
     async def lmedium(self, ctx):
-        ser.open()
-        ser.writre(b"lmed")
-        ser.read() == lmedread
+        ser.write(b"lmed")
+        ser.do_POST() == lmedread
         if lmedread == 1:
             await ctx.send(f"Sent!")
         while lmedread == 1:
-            ser.read() == lmedread
+            ser.do_POST() == lmedread
         await ctx.send(f"Done!")
             
     @commands.command()
     async def mmedium(self, ctx):
-        ser.open()
-        ser.writre(b"mmed")
-        ser.read() == mmedread
+        ser.write(b"mmed")
+        ser.do_POST() == mmedread
         if mmedread == 1:
             await ctx.send(f"Sent!")
         while mmedread == 1:
-            ser.read() == mmedread
+            ser.do_POST() == mmedread
         await ctx.send(f"Done!")
             
     @commands.command()
     async def hmedium(self, ctx):
-        ser.open()
-        ser.writre(b"hmed")
-        ser.read() == hmedread
+        ser.write(b"hmed")
+        ser.do_POST() == hmedread
         if hmedread == 1:
             await ctx.send(f"Sent!")
         while hmedread == 1:
-            ser.read() == hmedread
+            ser.do_POST() == hmedread
         await ctx.send(f"Done!")
 
 def setup(bot):
