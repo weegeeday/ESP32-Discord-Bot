@@ -9,12 +9,13 @@ hostName = str(settings.hostname)
 serverPort = int(settings.port)
 
 class MyServer(BaseHTTPRequestHandler):
-    def do_GET(self):
+    def do_GET(self, arg):
         self.send_response(200)
         self.send_header("Content-type", "text")
         self.end_headers()
         self.wfile.write(bytes(arg, "utf-8"))
         print("get")
+        print(arg)
     
     def do_POST(self):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
@@ -23,8 +24,6 @@ class MyServer(BaseHTTPRequestHandler):
                 str(self.path), str(self.headers), post_data.decode('utf-8'))    
         print("post")
         print(post_data)
-        print("changing get arg to post data")
-        arg = post_data
 if __name__ == "__main__":        
     webServer = HTTPServer((hostName, serverPort), MyServer)
     print("Server started http://%s:%s" % (hostName, serverPort))
